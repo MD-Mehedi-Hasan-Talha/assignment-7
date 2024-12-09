@@ -4,20 +4,20 @@ import Search from "../Icons/Search";
 import LanguageConverter from "./LanguageConverter";
 import Logo from "./Logo";
 
-export default function Header() {
+export default function Header({ dict }) {
   return (
     <header className="flex justify-between items-center mb-8">
       <div className="flex items-center space-x-8">
         <Logo />
         <nav className=" hidden md:flex space-x-6">
           <Link href="#" className="text-color-purple font-semibold">
-            TOP STREAMING
+            {dict.topStreaming}
           </Link>
           <Link href="#" className="text-gray-400 hover:text-white">
-            GAMES
+            {dict.games}
           </Link>
           <Link href="#" className="text-gray-400 hover:text-white">
-            TEAMS
+            {dict.teams}
           </Link>
         </nav>
       </div>
@@ -25,7 +25,7 @@ export default function Header() {
         <div className="relative">
           <input
             type="text"
-            placeholder="Search"
+            placeholder={dict.search}
             className="bg-color-gray rounded-full py-2 px-4 w-64 focus:outline-none focus:ring-2 focus:ring-color-purple"
           />
           <Search />

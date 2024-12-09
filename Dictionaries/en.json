@@ -1,0 +1,38 @@
+{
+    "videoCaptions": {
+      "comingSoon": "COMING SOON",
+      "schedule": "Broadcast starts in",
+      "live": "LIVE",
+      "donate": "Donate"
+    },
+    "subscribe": "Subscribe",
+    "topStreaming": "TOP STREAMING",
+    "games": "GAMES",
+    "teams": "TEAMS",
+    "youMayLike": "You may like",
+    "search": "Search",
+    "seeAll": "View all",
+    "streamsOfTheDay": "Streams of the day",
+    "heroAreaHeading1": "PLAY, COMPETE,",
+    "heroAreaHeading2": "FOLLOW POPULAR",
+    "heroAreaHeading3": "STREAMERS",
+    "heroAreaDescription": "The best streamers gather here to have a good time, be among us, join us!",
+    "rootNotFound": {
+      "title": "Not Found",
+      "description": "This is page you want to visit was not found",
+      "return": "Return Home"
+    },
+    "notFound": {
+      "title": "Not Found",
+      "description": {
+        "part1": "This video with '",
+        "part2": "' id was not found!"
+      },
+      "return": "Return Home"
+    },
+    "error": {
+      "title": "Something went wrong!",
+      "description": "Please try again later.",
+      "return": "Return Home"
+    }
+  }

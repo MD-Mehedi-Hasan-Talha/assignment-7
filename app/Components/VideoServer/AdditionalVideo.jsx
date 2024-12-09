@@ -4,16 +4,16 @@ import goToRoute from "@/utils/goToRoute";
 import truncateString from "@/utils/truncateString";
 import Image from "next/image";
 
-export default function AdditionalVideo({ videos, videoId }) {
+export default function AdditionalVideo({ videos, videoId, lang, dict }) {
   return (
     <div className="lg:w-1/4">
-      <h2 className="text-xl font-semibold mb-4">You may like</h2>
+      <h2 className="text-xl font-semibold mb-4">{dict.youMayLike}</h2>
       <div className="space-y-4">
         {videos
           .filter((video) => video.videoId !== videoId)
           .map((video) => (
             <div
-              onClick={() => goToRoute(video.videoId)}
+              onClick={() => goToRoute(`/videos/${video.videoId}`, lang)}
               key={video.videoId}
               className="flex items-start space-x-4 cursor-pointer"
             >
@@ -29,7 +29,6 @@ export default function AdditionalVideo({ videos, videoId }) {
                   {truncateString(video.title, 50)}
                 </h3>
                 <p className="text-sm text-gray-400">{video.channelTitle}</p>
-                <p className="text-sm text-gray-400">26,389M</p>
               </div>
             </div>
           ))}

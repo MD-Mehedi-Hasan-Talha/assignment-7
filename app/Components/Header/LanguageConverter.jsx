@@ -41,7 +41,7 @@ export default function LanguageConverter() {
           />
           <span className="mr-1">
             {selectedLang === "bn"
-              ? "Bangla"
+              ? "বাংলা"
               : selectedLang === "en"
               ? "English"
               : "error"}
@@ -61,7 +61,7 @@ export default function LanguageConverter() {
                 src="/assets/images/bd.png"
                 alt="bangla"
               />
-              Bangla
+              বাংলা
             </li>
             <li
               className="flex items-center gap-2 p-2 rounded-md cursor-pointer hover:bg-color-gray"

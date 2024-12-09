@@ -1,7 +1,8 @@
+import getTimeByLocal from "@/utils/getTimeByLocal";
 import Play from "../Icons/Play";
 import AdditionalVideo from "./AdditionalVideo";
 
-export default function Video({ video, allVideos }) {
+export default function Video({ video, allVideos, lang, dict }) {
   return (
     <main className="flex flex-col lg:flex-row gap-6">
       <div className="lg:w-3/4">
@@ -22,11 +23,11 @@ export default function Video({ video, allVideos }) {
                 <Play />
               </button>
               <div className="bg-color-purple text-white px-2 py-1 rounded text-sm">
-                LIVE
+                {dict.videoCaptions.live}
               </div>
-              <span className="text-sm">46:02</span>
+              <span className="text-sm">{getTimeByLocal("46:02", lang)}</span>
               <button className="bg-color-purple hover:bg-opacity-80 text-white px-4 py-1 rounded-full text-sm">
-                Donate
+                {dict.videoCaptions.donate}
               </button>
             </div>
           </div>
@@ -42,12 +43,17 @@ export default function Video({ video, allVideos }) {
             <p className="font-semibold">{video.channelTitle}</p>
           </div>
           <button className="bg-color-purple hover:bg-opacity-80 text-white px-4 py-1 rounded-full text-sm ml-auto">
-            Subscribe
+            {dict.subscribe}
           </button>
         </div>
       </div>
 
-      <AdditionalVideo videos={allVideos} videoId={video.videoId} />
+      <AdditionalVideo
+        videos={allVideos}
+        videoId={video.videoId}
+        lang={lang}
+        dict={dict}
+      />
     </main>
   );
 }

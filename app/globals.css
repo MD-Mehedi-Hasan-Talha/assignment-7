@@ -9,3 +9,7 @@
     font-family: "play", serif;
   }
 }
+
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.55);
+}

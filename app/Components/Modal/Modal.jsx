@@ -17,7 +17,7 @@ const Modal = ({ children }) => {
   }, []);
 
   function onHide() {
-    router.back();
+    location.replace("/");
   }
 
   return createPortal(

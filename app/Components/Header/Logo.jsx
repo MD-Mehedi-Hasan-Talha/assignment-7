@@ -10,8 +10,8 @@ export default function Logo() {
   return (
     <Link href={`/${lang}`}>
       <Image
-        width={100}
-        height={50}
+        width={200}
+        height={80}
         src="/assets/logo.svg"
         alt="LWS Xstream Logo"
         className="h-6"

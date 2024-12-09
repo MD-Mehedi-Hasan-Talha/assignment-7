@@ -9,7 +9,7 @@ export default function Video({ video, lang }) {
     >
       <Image
         width={300}
-        height={200}
+        height={300}
         src={video.thumbnail}
         alt={video.title}
         className="w-full h-40 object-cover"
