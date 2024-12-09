@@ -6,7 +6,7 @@ export default function Error({ error, reset }) {
       <div className="p-8 border rounded border-color-gray flex flex-col gap-2 w-full lg:w-1/3 md:w-1/2">
         <h2 className="text-2xl font-bold text-white">Something went wrong!</h2>
         <p className="text-white">
-          We're sorry, but something went wrong on our server. Please try
+          We&apos;re sorry, but something went wrong on our server. Please try
           refreshing the page or coming back later. If the issue persists,
           contact support for assistance.
         </p>

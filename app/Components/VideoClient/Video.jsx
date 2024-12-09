@@ -1,4 +1,5 @@
 import getTimeByLocal from "@/utils/getTimeByLocal";
+import Image from "next/image";
 import Play from "../Icons/Play";
 import AdditionalVideo from "./AdditionalVideo";
 
@@ -34,7 +35,9 @@ export default function Video({ video, allVideos, lang, dict }) {
         </div>
         <h1 className="text-2xl font-bold mt-4">{video.title}</h1>
         <div className="flex items-center space-x-4 mt-2">
-          <img
+          <Image
+            width={50}
+            height={50}
             src="/assets/avatar.png"
             alt="Avatar"
             className="w-10 h-10 rounded-full"

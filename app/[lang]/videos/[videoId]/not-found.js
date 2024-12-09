@@ -22,7 +22,7 @@ export default function NotFound() {
       }
     };
     getDict();
-  }, []);
+  }, [lang]);
 
   return (
     <div className="mt-10 p-8 lg:w-1/3 md:w-1/2 w-full border border-color-gray rounded mx-auto">

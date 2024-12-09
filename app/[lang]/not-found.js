@@ -22,7 +22,7 @@ export default function NotFound() {
       }
     };
     getDict();
-  }, []);
+  }, [lang]);
 
   return (
     <html>
