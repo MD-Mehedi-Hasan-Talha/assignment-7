@@ -1,4 +1,4 @@
-import videos from "@/data/videoForApi.json";
+import videos from "@/data/videos.json";
 import { NextResponse } from "next/server";
 
 export function GET() {
