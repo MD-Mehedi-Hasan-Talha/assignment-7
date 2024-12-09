@@ -4,9 +4,14 @@ import { useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 
 import Image from "next/image";
+import { usePathname, useRouter } from "next/navigation";
 
 const Modal = ({ children, lang }) => {
   const modalRef = useRef(null);
+  const router = useRouter();
+
+  const pathname = usePathname();
+  const pattern = /\/videos\/[^/]+$/;
 
   useEffect(() => {
     if (!modalRef.current?.open) {
@@ -15,7 +20,11 @@ const Modal = ({ children, lang }) => {
   }, []);
 
   function onHide() {
-    location.replace(`/${lang}`);
+    router.push(`/${lang}`);
+  }
+
+  if (!pattern.test(pathname)) {
+    return null;
   }
 
   return createPortal(
