@@ -1,7 +1,5 @@
-import videos from "@/data/videoForApi.json";
-import fs from "fs";
+import videos from "@/data/videos.json";
 import { NextResponse } from "next/server";
-import path from "path";
 
 export function GET(_req, { params }) {
   const { id } = params;
@@ -42,9 +40,9 @@ export async function PATCH(req, { params }) {
     }
 
     const { id } = params;
-    const videoById = videos.find((video) => video.videoId === id);
+    const videoIndex = videos.findIndex((video) => video.videoId === id);
 
-    if (!videoById) {
+    if (!videoIndex) {
       return NextResponse.json(
         {
           message: `This video with '${id}' id was not found!`,
@@ -68,21 +66,13 @@ export async function PATCH(req, { params }) {
       );
     }
 
-    const nextData = {
-      ...videoById,
-      title: title || videoById.title,
-      description: description || videoById.description,
-    };
+    videos[videoIndex].title = title || videos[videoIndex].title;
+    videos[videoIndex].description =
+      description || videos[videoIndex].description;
 
-    const fileData = videos.map((video) =>
-      video.videoId === id ? nextData : video
-    );
-
-    const dbFilePath = path.join(process.cwd(), "/data/videoForApi.json");
-    fs.writeFileSync(dbFilePath, JSON.stringify(fileData));
-
-    return NextResponse.json(nextData);
+    return NextResponse.json(videos[videoIndex]);
   } catch (error) {
+    console.log(error);
     return NextResponse.json({
       message: "An error occurred while updating the video!",
       error,
@@ -93,9 +83,9 @@ export async function PATCH(req, { params }) {
 export async function DELETE(_req, { params }) {
   try {
     const { id } = params;
-    const videoById = videos.find((video) => video.videoId === id);
+    const videoIndex = videos.findIndex((video) => video.videoId === id);
 
-    if (!videoById) {
+    if (!videoIndex) {
       return NextResponse.json(
         {
           message: `This video with '${id}' id was not found!`,
@@ -106,12 +96,11 @@ export async function DELETE(_req, { params }) {
       );
     }
 
-    const fileData = videos.filter((video) => video.videoId !== id);
+    const videoToDelete = videos[videoIndex];
 
-    const pathUrl = path.join(process.cwd(), "/data/videoForApi.json");
-    fs.writeFileSync(pathUrl, JSON.stringify(fileData));
+    videos.splice(videos[videoIndex], 1);
 
-    return NextResponse.json(videoById);
+    return NextResponse.json(videoToDelete);
   } catch (error) {
     return NextResponse.json({
       message: "An error occurred while deleting the video!",
