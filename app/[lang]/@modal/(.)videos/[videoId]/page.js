@@ -14,7 +14,7 @@ export default async function VideoPage({ params: { lang, videoId } }) {
   const dict = await getDictionaries(lang);
 
   return (
-    <Modal>
+    <Modal lang={lang}>
       <Video video={currentVideo} allVideos={videos} lang={lang} dict={dict} />
     </Modal>
   );

@@ -4,7 +4,7 @@ import truncateString from "@/utils/truncateString";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function AdditionalVideo({ videos, videoId, dict }) {
+export default function AdditionalVideo({ videos, videoId, dict, lang }) {
   return (
     <div className="lg:w-1/4">
       <h2 className="text-xl font-semibold mb-4">{dict.youMayLike}</h2>
@@ -13,7 +13,7 @@ export default function AdditionalVideo({ videos, videoId, dict }) {
           .filter((video) => video.videoId !== videoId)
           .map((video) => (
             <Link
-              href={`/videos/${video.videoId}`}
+              href={`/${lang}/videos/${video.videoId}`}
               key={video.videoId}
               className="flex items-start space-x-4 cursor-pointer"
             >

@@ -1,14 +1,12 @@
 "use client";
 
-import { useRouter } from "next/navigation";
 import { useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 
 import Image from "next/image";
 
-const Modal = ({ children }) => {
+const Modal = ({ children, lang }) => {
   const modalRef = useRef(null);
-  const router = useRouter();
 
   useEffect(() => {
     if (!modalRef.current?.open) {
@@ -17,7 +15,7 @@ const Modal = ({ children }) => {
   }, []);
 
   function onHide() {
-    location.replace("/");
+    location.replace(`/${lang}`);
   }
 
   return createPortal(

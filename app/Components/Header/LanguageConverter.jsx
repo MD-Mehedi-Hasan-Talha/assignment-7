@@ -58,7 +58,7 @@ export default function LanguageConverter() {
                 width={40}
                 height={40}
                 className="max-w-8"
-                src="/assets/images/bd.png"
+                src="/assets/images/bn.png"
                 alt="bangla"
               />
               বাংলা
@@ -71,7 +71,7 @@ export default function LanguageConverter() {
                 width={40}
                 height={40}
                 className="max-w-8"
-                src="/assets/images/usa.png"
+                src="/assets/images/en.png"
                 alt="bangla"
               />
               English
